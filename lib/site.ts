@@ -1,7 +1,8 @@
-// Site-wide constants. SITE_URL includes the GitHub Pages base path so every
-// absolute URL used for SEO (canonical, hreflang, Open Graph, sitemap) is right.
-export const BASE_PATH = "/ac.art_tattoo_studio";
-export const SITE_URL = `https://po2k.github.io${BASE_PATH}`;
+// Site-wide constants. Both values are fixed at build time from the
+// environment so the same code deploys to the production domain (root) and
+// to GitHub Pages (under a base path). See .env.example.
+export const BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://acarttattoo.com").replace(/\/$/, "");
 export const INSTAGRAM_URL = "https://www.instagram.com/ac.art_tattoostudio/";
 export const MAPS_URL = "https://maps.app.goo.gl/7TdBCyYBPwsNCXHe7";
 

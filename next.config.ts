@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
-// Static export for GitHub Pages. The site lives under the repo name, so
-// every internal link and asset is prefixed with basePath.
+// Static export. The base path is empty on the production domain (Cloudflare
+// Pages) and "/ac.art_tattoo_studio" on GitHub Pages; see .env.example.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/ac.art_tattoo_studio",
+  basePath,
   trailingSlash: true,
   images: { unoptimized: true },
   reactStrictMode: true,
