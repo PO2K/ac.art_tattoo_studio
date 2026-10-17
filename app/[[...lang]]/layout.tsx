@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Kanit, Oswald } from "next/font/google";
+import { Anton, Noto_Sans_Thai, Oswald } from "next/font/google";
 import { notFound } from "next/navigation";
 import { DEFAULT_LANG, LANGS, absoluteUrl } from "@/lib/site";
 import { allRoutes, pagePath, resolveRoute, routeSegments } from "@/lib/routes";
@@ -9,7 +9,7 @@ import "../globals.css";
 // Fonts are downloaded at build time and self-hosted: no runtime request to Google.
 const display = Anton({ subsets: ["latin"], weight: "400", variable: "--font-display", display: "swap" });
 const text = Oswald({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-text", display: "swap" });
-const thai = Kanit({ subsets: ["thai", "latin"], weight: ["300", "400", "700"], variable: "--font-thai", display: "swap" });
+const thai = Noto_Sans_Thai({ subsets: ["thai", "latin"], weight: ["300", "400", "700", "800"], variable: "--font-thai", display: "swap" });
 
 type Params = { lang?: string[] };
 
