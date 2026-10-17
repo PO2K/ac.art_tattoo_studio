@@ -84,6 +84,7 @@ items = []
 for href, n, src, w, h in results:
     caption = grid.get(href, {}).get("alt", "")
     artist = artist_of(caption)
+    if artist == "Studio": continue  # unattributed posts are promos or personal, not tattoo work
     title = first_line(caption)
     en = f"{title} — tattoo by {TH_NAME[artist]}, AC Art Tattoo Studio" if title else f"Tattoo by {TH_NAME[artist]}, AC Art Tattoo Studio"
     th = f"{title} — รอยสักโดย {TH_NAME[artist]} AC Art Tattoo Studio" if title else f"รอยสักโดย {TH_NAME[artist]} AC Art Tattoo Studio"
