@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { INSTAGRAM_URL, MAPS_URL } from "@/lib/site";
+import { INSTAGRAM_URL, MAPS_URL, asset } from "@/lib/site";
 import type { Dictionary } from "@/lib/i18n";
 
 export function Artists({ t }: { t: Dictionary }) {
@@ -15,7 +15,7 @@ export function Artists({ t }: { t: Dictionary }) {
           {t.artists.list.map((a, i) => (
             <Reveal key={a.name} as="article" className="card glass" delay={i * 120}>
               <div className="media r43">
-                <Image src={a.image} alt={a.alt} fill sizes="(max-width: 700px) 100vw, 33vw" />
+                <Image src={asset(a.image)} alt={a.alt} fill sizes="(max-width: 700px) 100vw, 33vw" />
               </div>
               <div className="card-body">
                 <h3 className="serif">{a.name}</h3>
@@ -45,7 +45,7 @@ export function Work({ t }: { t: Dictionary }) {
           {t.work.list.map((w, i) => (
             <Reveal key={w.image} as="figure" delay={(i % 3) * 120}>
               <div className="media r45">
-                <Image src={w.image} alt={w.alt} fill loading="lazy" sizes="(max-width: 700px) 100vw, 33vw" />
+                <Image src={asset(w.image)} alt={w.alt} fill loading="lazy" sizes="(max-width: 700px) 100vw, 33vw" />
               </div>
               <figcaption>
                 <span>{w.title}</span>
