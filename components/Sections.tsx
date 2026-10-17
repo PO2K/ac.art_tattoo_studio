@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { INSTAGRAM_URL, MAPS_URL, asset } from "@/lib/site";
+import Link from "next/link";
+import { INSTAGRAM_URL, MAPS_URL, asset, type Lang } from "@/lib/site";
+import { pagePath } from "@/lib/routes";
 import type { Dictionary } from "@/lib/i18n";
 
 export function Artists({ t }: { t: Dictionary }) {
@@ -33,13 +35,16 @@ export function Artists({ t }: { t: Dictionary }) {
   );
 }
 
-export function Work({ t }: { t: Dictionary }) {
+export function Work({ t, lang }: { t: Dictionary; lang: Lang }) {
   return (
     <section id="work" aria-labelledby="work-h" className="section">
       <div className="container section-inner">
         <Reveal className="section-head">
           <h2 id="work-h" className="serif">{t.work.title}</h2>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener">{t.work.more}</a>
+          <div className="section-links">
+            <Link href={pagePath(lang, "gallery")}>{t.work.gallery}</Link>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener">{t.work.more}</a>
+          </div>
         </Reveal>
         <div className="work-grid">
           {t.work.list.map((w, i) => (
