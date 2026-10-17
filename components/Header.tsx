@@ -29,10 +29,11 @@ export default function Header({ lang, page, t }: { lang: Lang; page: Page; t: D
     <header className={`site-header${scrolled ? " scrolled" : ""}`}>
       <div className="bar label">
         <nav aria-label="Main" className="nav">
-          <a className="link" href={`${home}#artists`}>{t.nav.artists}</a>
-          <a className="link" href={`${home}#work`}>{t.nav.work}</a>
+          {/* Section anchors go through Link so the base path is applied on GitHub Pages. */}
+          <Link className="link" href={`${home}#artists`}>{t.nav.artists}</Link>
+          <Link className="link" href={`${home}#work`}>{t.nav.work}</Link>
           <Link className="link" href={pagePath(lang, "gallery")} aria-current={page === "gallery" ? "page" : undefined}>{t.nav.gallery}</Link>
-          <a className="link" href={`${home}#visit`}>{t.nav.visit}</a>
+          <Link className="link" href={`${home}#visit`}>{t.nav.visit}</Link>
         </nav>
         <Link href={home} className="brand">
           <span className="mark">AC ART</span>
