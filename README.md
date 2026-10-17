@@ -7,7 +7,16 @@ font sizes, spacing, radii, shadows, layout — which an implementation
 should replicate faithfully in its own components and styling system
 rather than copy wholesale.
 
-## Contents
+## Production page
+
+`index.html` is the page deployed to GitHub Pages at
+https://po2k.github.io/ac.art_tattoo_studio/. It is a plain static
+implementation of the mockup (no runtime) with a Thai/English switch:
+all copy lives in the `I18N` dictionary at the bottom of the file, and
+elements carry `data-i18n` keys. Language is chosen from `?lang=th|en`,
+then the visitor's saved choice, then the browser language.
+
+## Design reference contents
 
 - `Main.dc.html` — the artboard (a Design Component: an `<x-dc>`
   template + a small logic class). The values to replicate live in its
