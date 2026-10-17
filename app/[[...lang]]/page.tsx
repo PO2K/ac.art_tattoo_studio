@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import GalleryPage from "@/components/GalleryPage";
-import { Artists, Footer, Visit, Work } from "@/components/Sections";
+import { Artists, CtaBand, Footer, Visit, Work } from "@/components/Sections";
 import { getDictionary } from "@/lib/i18n";
 import { allRoutes, pagePath, resolveRoute, routeSegments } from "@/lib/routes";
 import { INSTAGRAM_URL, MAPS_URL, absoluteUrl } from "@/lib/site";
@@ -43,7 +43,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   };
 
   return (
-    <div className="page-bg">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header lang={lang} page="home" t={t} />
       <main>
@@ -52,7 +52,8 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         <Work t={t} lang={lang} />
         <Visit t={t} />
       </main>
+      <CtaBand t={t} />
       <Footer t={t} />
-    </div>
+    </>
   );
 }

@@ -1,40 +1,32 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n";
+import { INSTAGRAM_URL, asset } from "@/lib/site";
 
-/** Hero copy staggers in on load, then drifts down and fades as the page scrolls. */
+/** Dark hero: small flanking notes, two framed photos, giant headline overlapping them. */
 export default function Hero({ t }: { t: Dictionary }) {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let ticking = false;
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        const p = Math.min(y / (el.offsetHeight || 1), 1);
-        el.style.transform = `translateY(${(y * 0.18).toFixed(1)}px)`;
-        el.style.opacity = Math.max(0, 1 - p * 1.1).toFixed(3);
-        ticking = false;
-      });
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  const d = (ms: number) => ({ ["--d" as string]: `${ms}ms` });
   return (
-    <section id="top" ref={ref} className="hero container">
-      <p className="eyebrow hero-item" style={{ ["--d" as string]: "100ms" }}>{t.hero.eyebrow}</p>
-      <h1 className="serif hero-item" style={{ ["--d" as string]: "220ms" }}>
-        <span>{t.hero.title[0]}</span>
-        <span>{t.hero.title[1]}</span>
-      </h1>
-      <p className="lead hero-item" style={{ ["--d" as string]: "380ms" }}>{t.hero.lead}</p>
+    <section id="top" className="band dark">
+      <div className="watermark display" aria-hidden>Tattoo</div>
+      <div className="container hero">
+        <div className="hero-top">
+          <p className="small hero-item" style={d(80)}>{t.hero.eyebrow}</p>
+          <p className="center label hero-item" style={d(160)}>{t.hero.center}</p>
+          <p className="small right hero-item" style={d(240)}>{t.hero.aside}</p>
+        </div>
+        <div className="hero-media">
+          <div className="frame teal hero-item" style={d(300)}>
+            <Image src={asset(t.artists.list[0].image)} alt={t.artists.list[0].alt} fill priority sizes="(max-width: 700px) 100vw, 490px" />
+          </div>
+          <div className="frame hero-item" style={d(380)}>
+            <Image src={asset(t.artists.list[1].image)} alt={t.artists.list[1].alt} fill priority sizes="(max-width: 700px) 100vw, 490px" />
+          </div>
+        </div>
+        <h1 className="display hero-headline hero-item" style={d(520)}>{t.hero.headline}</h1>
+        <div className="hero-cta hero-item" style={d(680)}>
+          <a className="btn cream" href={INSTAGRAM_URL} target="_blank" rel="noopener">{t.nav.book}</a>
+        </div>
+      </div>
     </section>
   );
 }

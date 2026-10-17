@@ -15,7 +15,8 @@ export type Dictionary = {
   meta: { title: string; description: string };
   brand: { sub: string };
   nav: { artists: string; work: string; visit: string; gallery: string; book: string; language: string };
-  hero: { eyebrow: string; title: [string, string]; lead: string };
+  hero: { eyebrow: string; title: [string, string]; lead: string; center: string; aside: string; headline: string };
+  cta: { text: string; button: string; big: string };
   artists: { title: string; sub: string; list: Artist[] };
   work: { title: string; more: string; gallery: string; list: Work[] };
   gallery: { metaTitle: string; metaDescription: string; title: string; sub: string; all: string; artists: Record<"Pe" | "Earth" | "Boom" | "Studio", string>; open: string; count: string; more: string };
@@ -44,7 +45,11 @@ const en: Dictionary = {
     eyebrow: "Realistic · Black & Gray · Fine Detail",
     title: ["Custom work, designed", "for one person only."],
     lead: "Custom-designed tattoos — every piece starts from your own brief. A new needle every time, consultation included, credit cards accepted.",
+    center: "Stories on skin · Nonthaburi",
+    aside: "Designed for one person only. A new needle every time, consultation included.",
+    headline: "Ink made for one",
   },
+  cta: { text: "Bookings are open — message the studio on Instagram", button: "Book now", big: "AC Art Tattoo" },
   artists: {
     title: "The artists",
     sub: "Three hands, three specialties",
@@ -121,7 +126,11 @@ const th: Dictionary = {
     eyebrow: "เรียลลิสติก · แบล็คแอนด์เกรย์ · งานละเอียด",
     title: ["งานสักออกแบบเฉพาะ", "สำหรับคุณคนเดียว"],
     lead: "ลายสักออกแบบเฉพาะบุคคล — ทุกชิ้นงานเริ่มจากไอเดียของคุณ ใช้เข็มใหม่ทุกครั้ง มีบริการให้คำปรึกษาเรื่องแบบ รับบัตรเครดิต",
+    center: "เรื่องราวบนผิวหนัง · นนทบุรี",
+    aside: "ออกแบบเฉพาะคุณคนเดียว ใช้เข็มใหม่ทุกครั้ง มีบริการให้คำปรึกษา",
+    headline: "สักเพื่อคุณคนเดียว",
   },
+  cta: { text: "เปิดจองคิวแล้ว — ทัก DM ร้านทาง Instagram", button: "จองคิวเลย", big: "AC Art Tattoo" },
   artists: {
     title: "ศิลปินของเรา",
     sub: "สามช่าง สามความถนัด",

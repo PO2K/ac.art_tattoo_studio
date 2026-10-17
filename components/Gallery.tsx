@@ -31,7 +31,7 @@ export default function Gallery({ items, lang, t }: { items: GalleryItem[]; lang
         {shown.map((item, i) => (
           <a
             key={item.src}
-            className="tile"
+            className="gtile"
             href={`https://www.instagram.com${item.post}`}
             target="_blank"
             rel="noopener"
@@ -45,7 +45,7 @@ export default function Gallery({ items, lang, t }: { items: GalleryItem[]; lang
       </div>
       {shown.length < filtered.length && (
         <div className="more">
-          <button type="button" className="btn-ghost" onClick={() => setLimit((n) => n + PAGE)}>{t.gallery.more}</button>
+          <button type="button" className="btn outline-dark" onClick={() => setLimit((n) => n + PAGE)}>{t.gallery.more}</button>
         </div>
       )}
     </>

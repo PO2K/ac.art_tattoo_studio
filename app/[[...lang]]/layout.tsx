@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, IBM_Plex_Sans_Thai } from "next/font/google";
+import { Anton, Kanit, Oswald } from "next/font/google";
 import { notFound } from "next/navigation";
 import { DEFAULT_LANG, LANGS, absoluteUrl } from "@/lib/site";
 import { allRoutes, pagePath, resolveRoute, routeSegments } from "@/lib/routes";
@@ -7,8 +7,9 @@ import { getDictionary } from "@/lib/i18n";
 import "../globals.css";
 
 // Fonts are downloaded at build time and self-hosted: no runtime request to Google.
-const serif = Bodoni_Moda({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-serif", display: "swap" });
-const sans = IBM_Plex_Sans_Thai({ subsets: ["thai", "latin"], weight: ["400", "500", "600"], variable: "--font-sans", display: "swap" });
+const display = Anton({ subsets: ["latin"], weight: "400", variable: "--font-display", display: "swap" });
+const text = Oswald({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-text", display: "swap" });
+const thai = Kanit({ subsets: ["thai", "latin"], weight: ["300", "400", "700"], variable: "--font-thai", display: "swap" });
 
 type Params = { lang?: string[] };
 
@@ -49,7 +50,7 @@ export default async function RootLayout({ children, params }: { children: React
   const route = resolveRoute((await params).lang);
   if (!route) notFound();
   return (
-    <html lang={route.lang} className={`${serif.variable} ${sans.variable}`}>
+    <html lang={route.lang} className={`${display.variable} ${text.variable} ${thai.variable}`}>
       <body>{children}</body>
     </html>
   );
