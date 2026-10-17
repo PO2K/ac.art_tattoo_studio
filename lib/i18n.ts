@@ -78,6 +78,9 @@ const en: Dictionary = {
       { title: "“1999” lettering", artist: "Earth", image: "/images/work-1999-lettering-earth.jpg", alt: "1999 lettering tattoo by Earth" },
       { title: "Floral thigh piece", artist: "Pe", image: "/images/work-floral-thigh-pe.jpg", alt: "Floral thigh piece tattoo by Pe" },
       { title: "Life-story chest piece", artist: "Earth", image: "/images/work-chest-piece-earth.jpg", alt: "Life-story chest piece tattoo by Earth" },
+      { title: "The Virgin Mary", artist: "Earth", image: "/images/work-virgin-mary-earth.jpg", alt: "Virgin Mary with rose forearm tattoo by Earth" },
+      { title: "Hammerhead shark", artist: "Pe", image: "/images/work-hammerhead-shark-pe.jpg", alt: "Hammerhead shark blackwork shoulder tattoo by Pe" },
+      { title: "Sagittarius", artist: "Earth", image: "/images/work-sagittarius-earth.jpg", alt: "Sagittarius archer forearm tattoo by Earth" },
     ],
   },
   visit: {
@@ -140,6 +143,9 @@ const th: Dictionary = {
       { title: "ตัวอักษร “1999”", artist: "Earth", image: "/images/work-1999-lettering-earth.jpg", alt: "รอยสักตัวอักษร 1999 โดย Earth" },
       { title: "ลายดอกไม้ต้นขา", artist: "Pe", image: "/images/work-floral-thigh-pe.jpg", alt: "รอยสักดอกไม้บนต้นขา โดย Pe" },
       { title: "งานหน้าอกเล่าเรื่องชีวิต", artist: "Earth", image: "/images/work-chest-piece-earth.jpg", alt: "รอยสักหน้าอกเล่าเรื่องชีวิต โดย Earth" },
+      { title: "พระแม่มารี", artist: "Earth", image: "/images/work-virgin-mary-earth.jpg", alt: "รอยสักพระแม่มารีกับดอกกุหลาบบนท่อนแขน โดย Earth" },
+      { title: "ฉลามหัวค้อน", artist: "Pe", image: "/images/work-hammerhead-shark-pe.jpg", alt: "รอยสักฉลามหัวค้อนแบล็คเวิร์คบนไหล่ โดย Pe" },
+      { title: "ราศีธนู", artist: "Earth", image: "/images/work-sagittarius-earth.jpg", alt: "รอยสักราศีธนูบนท่อนแขน โดย Earth" },
     ],
   },
   visit: {
