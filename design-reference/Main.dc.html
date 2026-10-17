@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&amp;family=IBM+Plex+Sans+Thai:wght@400;500;600&amp;display=swap">
 <style>
 body{margin:0;background:#05090c}
-.page-bg{background-color:#05090c;background-image:linear-gradient(rgba(20,17,8,0.78),rgba(5,9,12,0.94)),url(./assets/ff59110410694be9ffcea170c633c94d.jpg);background-size:cover;background-position:center 20%;background-attachment:fixed}
+.page-bg{background-color:#05090c;background-image:linear-gradient(rgba(20,17,8,0.78),rgba(5,9,12,0.94)),url(../public/images/pe-back-piece.jpg);background-size:cover;background-position:center 20%;background-attachment:fixed}
 .glass{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 a{color:#e8eef2}a:hover{color:#c9a84c}
 </style>
@@ -51,7 +51,7 @@ a{color:#e8eef2}a:hover{color:#c9a84c}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
 
 <article class="glass" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); display: flex; flex-direction: column">
-<img src="./assets/ff59110410694be9ffcea170c633c94d.jpg" alt="Conceptual black and gray back piece by Pe" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 30%; background: #1f1f1f">
+<img src="../public/images/pe-back-piece.jpg" alt="Conceptual black and gray back piece by Pe" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 30%; background: #1f1f1f">
 <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px">
 <h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: 30px">Pe</h3>
 <p style="margin: 0; color: #9fb4c0; font-size: 14px">[INSTAGRAM HANDLE]</p>
@@ -67,7 +67,7 @@ a{color:#e8eef2}a:hover{color:#c9a84c}
 </article>
 
 <article class="glass" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); display: flex; flex-direction: column">
-<img src="./assets/b6fec5514439da9f2e0d5de55aa3554f.jpg" alt="Calligraphy forearm piece by Earth" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 40%; background: #1f1f1f">
+<img src="../public/images/earth-calligraphy.jpg" alt="Calligraphy forearm piece by Earth" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 40%; background: #1f1f1f">
 <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px">
 <h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: 30px">Earth</h3>
 <p style="margin: 0; color: #9fb4c0; font-size: 14px">[INSTAGRAM HANDLE]</p>
@@ -83,7 +83,7 @@ a{color:#e8eef2}a:hover{color:#c9a84c}
 </article>
 
 <article class="glass" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); display: flex; flex-direction: column">
-<img src="./assets/16bd816b87f2531cba7192d3d6ae13b7.jpg" alt="Blackwork flash design by Boom Scarmaker" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 35%; background: #1f1f1f">
+<img src="../public/images/boom-flash.jpg" alt="Blackwork flash design by Boom Scarmaker" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 35%; background: #1f1f1f">
 <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px">
 <h3 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: 30px">Boom Scarmaker</h3>
 <p style="margin: 0; color: #9fb4c0; font-size: 14px">[INSTAGRAM HANDLE]</p>
@@ -169,12 +169,12 @@ a{color:#e8eef2}a:hover{color:#c9a84c}
 class Component extends DCLogic {
 renderVals() {
 const works = [
-{ title: 'Leg sleeve', artist: 'Pe', src: './assets/7f57f21101719dd7c422b71a3b625af3.jpg' },
-{ title: 'New Chicano', artist: 'Earth', src: './assets/252660c39e28a4b77bc81f71f417993f.jpg' },
-{ title: 'Snake & thunder', artist: 'Pe', src: './assets/3c115d86f41cc388bd06a952a7fd9838.jpg' },
-{ title: '"1999" lettering', artist: 'Earth', src: './assets/75a257bb370df27bc0d6f2f61b58909c.jpg' },
-{ title: 'Floral thigh piece', artist: 'Pe', src: './assets/c685c7231bab0206504b431c52d7bf9c.jpg' },
-{ title: 'Life-story chest piece', artist: 'Earth', src: './assets/6704c7e5d2abb9b4fd3a3f3cca790c91.jpg' }
+{ title: 'Leg sleeve', artist: 'Pe', src: '../public/images/work-leg-sleeve-pe.jpg' },
+{ title: 'New Chicano', artist: 'Earth', src: '../public/images/work-chicano-earth.jpg' },
+{ title: 'Snake & thunder', artist: 'Pe', src: '../public/images/work-snake-thunder-pe.jpg' },
+{ title: '"1999" lettering', artist: 'Earth', src: '../public/images/work-1999-lettering-earth.jpg' },
+{ title: 'Floral thigh piece', artist: 'Pe', src: '../public/images/work-floral-thigh-pe.jpg' },
+{ title: 'Life-story chest piece', artist: 'Earth', src: '../public/images/work-chest-piece-earth.jpg' }
 ].map((w) => ({ ...w, alt: w.title + ' tattoo by ' + w.artist }));
 return { accent: this.props.accent ?? '#c9a84c', works };
 }
