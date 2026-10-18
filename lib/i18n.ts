@@ -31,6 +31,15 @@ export type Dictionary = {
     careTitle: string; careBody: string;
   };
   footer: { text: string };
+  wolf: {
+    nav: { home: string; about: string; styles: string; artists: string; gallery: string; contact: string };
+    hero: { pre: string; highlight: string; book: string; gallery: string };
+    about: { title: string; heading: string; text1: string; text2: string; sign: string };
+    styles: { title: string; items: string[]; featuredTitle: string; featuredText: string; more: string };
+    artists: { title: string; role: string };
+    gallery: { title: string; more: string };
+    contact: { title: string };
+  };
 };
 
 const en: Dictionary = {
@@ -112,6 +121,27 @@ const en: Dictionary = {
     more: "Show more",
   },
   footer: { text: "AC Art Tattoo Studio · Nonthaburi, Thailand" },
+  wolf: {
+    nav: { home: "Home", about: "About", styles: "Styles", artists: "Artists", gallery: "Gallery", contact: "Contact" },
+    hero: { pre: "Custom tattoos, designed for", highlight: "one person only", book: "Book now", gallery: "View gallery" },
+    about: {
+      title: "About us",
+      heading: "Stories on skin",
+      text1: "AC Art is a custom tattoo studio on Tiwanon 45 in Nonthaburi. Every piece starts from your own brief and is drawn for you alone — realistic and black & gray work, lettering and calligraphy, and original blackwork flash.",
+      text2: "A new needle every time, design consultation included, and credit cards accepted. Bookings are by appointment through Instagram.",
+      sign: "AC Art Tattoo",
+    },
+    styles: {
+      title: "Our styles",
+      items: ["Realistic", "Black & Gray", "Lettering", "Chicano", "Blackwork flash", "Fine detail"],
+      featuredTitle: "Realistic & black and gray",
+      featuredText: "Large-scale, story-driven pieces built around your idea — from a single fine-detail motif to a full sleeve or back.",
+      more: "View the gallery",
+    },
+    artists: { title: "Meet our artists", role: "Tattoo artist" },
+    gallery: { title: "Tattoo gallery", more: "View more" },
+    contact: { title: "Visit us" },
+  },
 };
 
 const th: Dictionary = {
@@ -193,6 +223,27 @@ const th: Dictionary = {
     more: "ดูเพิ่มเติม",
   },
   footer: { text: "AC Art Tattoo Studio · นนทบุรี ประเทศไทย" },
+  wolf: {
+    nav: { home: "หน้าแรก", about: "เกี่ยวกับเรา", styles: "สไตล์งาน", artists: "ศิลปิน", gallery: "แกลเลอรี", contact: "ติดต่อ" },
+    hero: { pre: "ลายสักออกแบบเฉพาะ", highlight: "สำหรับคุณคนเดียว", book: "จองคิว", gallery: "ดูแกลเลอรี" },
+    about: {
+      title: "เกี่ยวกับเรา",
+      heading: "เรื่องราวบนผิวหนัง",
+      text1: "AC Art คือสตูดิโอสักออกแบบเฉพาะบุคคล ติวานนท์ 45 นนทบุรี ทุกชิ้นงานเริ่มจากไอเดียของคุณและวาดขึ้นเพื่อคุณคนเดียว ทั้งงานเรียลลิสติกและแบล็คแอนด์เกรย์ ตัวอักษรและคัลลิกราฟี และลายแฟลชแบล็คเวิร์คออริจินัล",
+      text2: "ใช้เข็มใหม่ทุกครั้ง มีบริการให้คำปรึกษาเรื่องแบบ รับบัตรเครดิต จองคิวล่วงหน้าทาง Instagram",
+      sign: "AC Art Tattoo",
+    },
+    styles: {
+      title: "สไตล์งานของเรา",
+      items: ["เรียลลิสติก", "แบล็คแอนด์เกรย์", "ตัวอักษร", "ชิคาโน", "แฟลชแบล็คเวิร์ค", "งานละเอียด"],
+      featuredTitle: "เรียลลิสติกและแบล็คแอนด์เกรย์",
+      featuredText: "งานชิ้นใหญ่ที่เล่าเรื่องราวจากไอเดียของคุณ ตั้งแต่ลายเล็กงานละเอียดไปจนถึงสลีฟเต็มแขนหรือเต็มหลัง",
+      more: "ดูแกลเลอรี",
+    },
+    artists: { title: "พบกับศิลปินของเรา", role: "ช่างสัก" },
+    gallery: { title: "แกลเลอรีรอยสัก", more: "ดูเพิ่มเติม" },
+    contact: { title: "มาหาเรา" },
+  },
 };
 
 const dictionaries: Record<Lang, Dictionary> = { en, th };

@@ -1,12 +1,13 @@
 import { DEFAULT_LANG, LANGS, type Lang, langPath } from "./site";
 
-export type Page = "home" | "gallery";
+export type Page = "home" | "gallery" | "v2";
 export type Route = { lang: Lang; page: Page };
 
 /**
  * Maps the optional catch-all segments to a route:
  *   []              -> English home        ["gallery"]        -> English gallery
  *   ["th"]          -> Thai home           ["th", "gallery"]  -> Thai gallery
+ *   ["v2"] / ["th", "v2"] -> alternative "Yellow Wolf" style home (noindex)
  * Anything else is a 404.
  */
 export function resolveRoute(segments?: string[]): Route | null {
@@ -19,17 +20,18 @@ export function resolveRoute(segments?: string[]): Route | null {
   }
   if (rest.length === 0) return { lang, page: "home" };
   if (rest.length === 1 && rest[0] === "gallery") return { lang, page: "gallery" };
+  if (rest.length === 1 && rest[0] === "v2") return { lang, page: "v2" };
   return null;
 }
 
 /** Public path for a page in a language, e.g. "/th/gallery/". */
 export function pagePath(lang: Lang, page: Page): string {
   const base = langPath(lang);
-  return page === "home" ? base : `${base}gallery/`;
+  return page === "home" ? base : `${base}${page}/`;
 }
 
 export function allRoutes(): Route[] {
-  const pages: Page[] = ["home", "gallery"];
+  const pages: Page[] = ["home", "gallery", "v2"];
   return LANGS.flatMap((lang) => pages.map((page) => ({ lang, page })));
 }
 

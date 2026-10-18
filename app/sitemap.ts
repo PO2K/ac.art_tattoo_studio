@@ -5,7 +5,7 @@ import { allRoutes, pagePath } from "@/lib/routes";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return allRoutes().map(({ lang, page }) => ({
+  return allRoutes().filter((r) => r.page !== "v2").map(({ lang, page }) => ({
     url: absoluteUrl(pagePath(lang, page)),
     lastModified: new Date(),
     changeFrequency: "weekly",

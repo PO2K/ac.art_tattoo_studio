@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import GalleryPage from "@/components/GalleryPage";
+import WolfPage from "@/components/wolf/WolfPage";
 import { Artists, CtaBand, Footer, Visit, Work } from "@/components/Sections";
 import { getDictionary } from "@/lib/i18n";
 import { allRoutes, pagePath, resolveRoute, routeSegments } from "@/lib/routes";
@@ -20,6 +21,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const t = getDictionary(lang);
 
   if (page === "gallery") return <GalleryPage lang={lang} t={t} />;
+  if (page === "v2") return <WolfPage lang={lang} t={t} />;
 
   // Structured data so search engines can show the studio as a local business.
   const jsonLd = {

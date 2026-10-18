@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Anton, Noto_Sans_Thai, Oswald } from "next/font/google";
+import { Anton, Dancing_Script, Montserrat, Noto_Sans_Thai, Oswald } from "next/font/google";
 import { notFound } from "next/navigation";
 import { DEFAULT_LANG, LANGS, absoluteUrl } from "@/lib/site";
 import { allRoutes, pagePath, resolveRoute, routeSegments } from "@/lib/routes";
 import { getDictionary } from "@/lib/i18n";
 import "../globals.css";
+import "../wolf.css";
 
 // Fonts are downloaded at build time and self-hosted: no runtime request to Google.
 const display = Anton({ subsets: ["latin"], weight: "400", variable: "--font-display", display: "swap" });
 const text = Oswald({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-text", display: "swap" });
+const body = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body", display: "swap" });
+const script = Dancing_Script({ subsets: ["latin"], weight: "600", variable: "--font-script", display: "swap" });
 const thai = Noto_Sans_Thai({ subsets: ["thai", "latin"], weight: ["300", "400", "700", "800"], variable: "--font-thai", display: "swap" });
 
 type Params = { lang?: string[] };
@@ -42,7 +45,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       images: [{ url: absoluteUrl("/images/pe-back-piece.jpg"), alt: t.artists.list[0].alt }],
     },
     twitter: { card: "summary_large_image", title, description },
-    robots: { index: true, follow: true },
+    // The alternative layout is a preview of the same content: keep it out of search results.
+    robots: page === "v2" ? { index: false, follow: false } : { index: true, follow: true },
   };
 }
 
@@ -50,7 +54,7 @@ export default async function RootLayout({ children, params }: { children: React
   const route = resolveRoute((await params).lang);
   if (!route) notFound();
   return (
-    <html lang={route.lang} className={`${display.variable} ${text.variable} ${thai.variable}`}>
+    <html lang={route.lang} className={`${display.variable} ${text.variable} ${thai.variable} ${body.variable} ${script.variable}`}>
       <body>{children}</body>
     </html>
   );
