@@ -20,7 +20,7 @@ export default function GalleryPage({ lang, t }: { lang: Lang; t: Dictionary }) 
         </section>
       </main>
       <CtaBand t={t} />
-      <Footer t={t} />
+      <Footer t={t} lang={lang} />
     </>
   );
 }

@@ -163,6 +163,8 @@ html[lang="th"] .info h3 { letter-spacing: 0.02em; text-transform: none; font-si
 .site-footer .bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 20px 32px; }
 .site-footer a { color: var(--grey-2); text-decoration: none; }
 .site-footer a:hover { color: var(--white); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.footer-links a:first-child { color: var(--accent, #c9a84c); }
 
 /* Gallery page */
 .gallery-head { padding: 72px 32px 24px; display: flex; flex-direction: column; gap: 10px; position: relative; }

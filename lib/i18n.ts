@@ -30,7 +30,7 @@ export type Dictionary = {
     howTitle: string; howBody: string;
     careTitle: string; careBody: string;
   };
-  footer: { text: string };
+  footer: { text: string; toV2: string; toV1: string };
   wolf: {
     nav: { home: string; about: string; styles: string; artists: string; gallery: string; contact: string };
     hero: { pre: string; highlight: string; book: string; gallery: string };
@@ -120,7 +120,7 @@ const en: Dictionary = {
     count: "pieces",
     more: "Show more",
   },
-  footer: { text: "AC Art Tattoo Studio · Nonthaburi, Thailand" },
+  footer: { text: "AC Art Tattoo Studio · Nonthaburi, Thailand", toV2: "Try design v2 →", toV1: "← Back to design v1" },
   wolf: {
     nav: { home: "Home", about: "About", styles: "Styles", artists: "Artists", gallery: "Gallery", contact: "Contact" },
     hero: { pre: "Custom tattoos, designed for", highlight: "one person only", book: "Book now", gallery: "View gallery" },
@@ -222,7 +222,7 @@ const th: Dictionary = {
     count: "ชิ้น",
     more: "ดูเพิ่มเติม",
   },
-  footer: { text: "AC Art Tattoo Studio · นนทบุรี ประเทศไทย" },
+  footer: { text: "AC Art Tattoo Studio · นนทบุรี ประเทศไทย", toV2: "ดูดีไซน์เวอร์ชัน 2 →", toV1: "← กลับไปดีไซน์เวอร์ชัน 1" },
   wolf: {
     nav: { home: "หน้าแรก", about: "เกี่ยวกับเรา", styles: "สไตล์งาน", artists: "ศิลปิน", gallery: "แกลเลอรี", contact: "ติดต่อ" },
     hero: { pre: "ลายสักออกแบบเฉพาะ", highlight: "สำหรับคุณคนเดียว", book: "จองคิว", gallery: "ดูแกลเลอรี" },

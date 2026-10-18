@@ -55,7 +55,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         <Visit t={t} />
       </main>
       <CtaBand t={t} />
-      <Footer t={t} />
+      <Footer t={t} lang={lang} />
     </>
   );
 }

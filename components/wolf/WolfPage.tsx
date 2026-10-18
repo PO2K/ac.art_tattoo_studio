@@ -168,7 +168,10 @@ export default function WolfPage({ lang, t }: { lang: Lang; t: Dictionary }) {
       <footer className="w-footer">
         <div className="w-container w-bar">
           <span>{t.footer.text}</span>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener">@ac.art_tattoostudio</a>
+          <span className="w-footer-links">
+            <Link href={pagePath(lang, "home")}>{t.footer.toV1}</Link>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener">@ac.art_tattoostudio</a>
+          </span>
         </div>
       </footer>
     </div>

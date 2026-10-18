@@ -116,12 +116,15 @@ export function CtaBand({ t }: { t: Dictionary }) {
   );
 }
 
-export function Footer({ t }: { t: Dictionary }) {
+export function Footer({ t, lang }: { t: Dictionary; lang: Lang }) {
   return (
     <footer className="site-footer">
       <div className="container bar small">
         <span>{t.footer.text}</span>
-        <a href={INSTAGRAM_URL} target="_blank" rel="noopener">@ac.art_tattoostudio</a>
+        <span className="footer-links">
+          <Link href={pagePath(lang, "v2")}>{t.footer.toV2}</Link>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener">@ac.art_tattoostudio</a>
+        </span>
       </div>
     </footer>
   );

@@ -143,3 +143,5 @@ html[lang="th"] .theme-wolf .w-info h4 { font-family: var(--font-thai), sans-ser
 .theme-wolf .w-footer { background: var(--ink); color: rgba(255, 255, 255, 0.7); font-size: 13px; }
 .theme-wolf .w-footer a { text-decoration: none; }
 .theme-wolf .w-footer a:hover { color: var(--y); }
+.theme-wolf .w-footer-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.theme-wolf .w-footer-links a:first-child { color: var(--y); }
